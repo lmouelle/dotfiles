@@ -1,0 +1,3 @@
+*~
+*.swp
+emacs/.config/systemd/user/default.target.wants/

@@ -10,6 +10,11 @@
 # finally there is simply install and uninstall, which is the completion, last steps
 #
 
+# Right now we can use rustup to download the rust source.
+# The issue is that it downloads to a weird location.
+# I would rather it download to somewhere in my dotfiles and let symlinks do magic
+# That was it is easier to set the RUST_SRC_PATH
+
 .DEFAULT_GOAL:=install
 
 PACKAGES=$(sort $(dir $(wildcard */)))
@@ -19,12 +24,19 @@ rust_uninstall:
 	rustup self uninstall
 	rm ~/.config/fish/completions/rustup.fish
 	rmdir -p ~/.config/fish/completions
+	# this removal does leave one thing: the rust binaries in
+	# ~/.cargo/bin. They can take a loooong time to compile,
+	# and since I often troubleshoot by reinstalling with this makefile
+	# I will let this set between installations FOR NOW.
 
 .PHONY: rust_install
 rust_install:
 	curl https://sh.rustup.rs -sSf | sh
 	mkdir -p ~/.config/fish/completions/
 	rustup completions fish > ~/.config/fish/completions/rustup.fish
+	cargo install racer
+	cargo install rustfmt
+	rustup component add rust-src
 
 .PHONY: install
 install: 

@@ -3,20 +3,28 @@
 # fish ; also the agnoster theme with fish shell
 # oh-my-fish
 # emacs
+# rust with the rustup tool
 #
 # General install will install the generic packages, but does not complete the entire setup
 # Package specific installs, e.g. emacs_install, will operate for specific pkg logic
 # finally there is simply install and uninstall, which is the completion, last steps
 #
 
-# rustup self uninstall
-# curl https://sh.rustup.rs -sSf | sh
-# mkdir -p ~/.config/fish/completions/
-# rustup completions fish > ~/.config/fish/completions/rustup.fish
-
 .DEFAULT_GOAL:=install
 
 PACKAGES=$(sort $(dir $(wildcard */)))
+
+.PHONY: rust_uninstall
+rust_uninstall:
+	rustup self uninstall
+	rm ~/.config/fish/completions/rustup.fish
+	rmdir -p ~/.config/fish/completions
+
+.PHONY: rust_install
+rust_install:
+	curl https://sh.rustup.rs -sSf | sh
+	mkdir -p ~/.config/fish/completions/
+	rustup completions fish > ~/.config/fish/completions/rustup.fish
 
 .PHONY: install
 install: 
@@ -39,7 +47,7 @@ emacs_uninstall:
 	systemctl --user disable emacs
 
 .PHONY: reinstall
-redo:
+reinstall:
 	$(MAKE) uninstall
 	$(MAKE) install
 

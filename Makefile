@@ -9,6 +9,11 @@
 # finally there is simply install and uninstall, which is the completion, last steps
 #
 
+# rustup self uninstall
+# curl https://sh.rustup.rs -sSf | sh
+# mkdir -p ~/.config/fish/completions/
+# rustup completions fish > ~/.config/fish/completions/rustup.fish
+
 .DEFAULT_GOAL:=install
 
 PACKAGES=$(sort $(dir $(wildcard */)))
@@ -16,14 +21,24 @@ PACKAGES=$(sort $(dir $(wildcard */)))
 .PHONY: install
 install: 
 	stow -t ~ $(PACKAGES)
+	$(MAKE) emacs_install
 
 .PHONY: uninstall
 uninstall: 
-	systemctl --user condstop emacs
-	systemctl --user disable emacs
+	$(MAKE) emacs_uninstall
 	stow -Dt ~ $(PACKAGES)
 
-.PHONY: redo
+.PHONY: emacs_install
+emacs_install:
+	systemctl --user enable emacs
+	systemctl --user start emacs
+
+.PHONY: emacs_uninstall
+emacs_uninstall:
+	systemctl --user condstop emacs
+	systemctl --user disable emacs
+
+.PHONY: reinstall
 redo:
 	$(MAKE) uninstall
 	$(MAKE) install

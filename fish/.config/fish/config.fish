@@ -1,3 +1,6 @@
+# Add rustup toolchain to path
+set -gx PATH $PATH ~/.cargo/bin
+
 # Give Emacs terminal an alias
 alias emct "emacsclient -t"
 

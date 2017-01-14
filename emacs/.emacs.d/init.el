@@ -21,6 +21,7 @@
 (require 'setup-elisp)
 (require 'setup-python)
 (require 'setup-clojure)
+(require 'setup-rust)
 
 (provide 'init)
 (custom-set-variables
@@ -30,7 +31,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (cider-eval-sexp-fu cider yasnippet smex smartparens rainbow-delimiters python-mode popwin paredit live-py-mode ido-ubiquitous golden-ratio flycheck-pos-tip dracula-theme company-anaconda clang-format auto-compile))))
+    (cargo toml-mode flycheck-rust racer cider-eval-sexp-fu cider yasnippet smex smartparens rainbow-delimiters python-mode popwin paredit live-py-mode ido-ubiquitous golden-ratio flycheck-pos-tip dracula-theme company-anaconda clang-format auto-compile))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

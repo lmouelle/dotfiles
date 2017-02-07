@@ -1,8 +1,7 @@
 (require 'packaging)
 
 (require-package 'golden-ratio)
-(require-package 'dracula-theme)
-(require 'dracula-theme)
+(require-package 'darcula-theme)
 
 (setq inhibit-startup-message t)
 
@@ -21,5 +20,7 @@
 (setq column-number-mode t)
 
 (global-linum-mode t)
+
+(load-theme 'darcula)
 
 (provide 'ui)

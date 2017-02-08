@@ -21,6 +21,6 @@
 
 (global-linum-mode t)
 
-(load-theme 'darcula)
+(load-theme 'darcula t)
 
 (provide 'ui)

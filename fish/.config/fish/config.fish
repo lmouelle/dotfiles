@@ -9,3 +9,5 @@ alias emct "emacsclient -t"
 # ~/.config/systemd/user/emacs.service, this merely calls it
 set -gx EDITOR "emacsclient -t"
 
+# OPAM configuration
+source /home/lu/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true

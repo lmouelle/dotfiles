@@ -3,7 +3,7 @@
 ;; (require-package 'ocp-indent)
 (require-package 'tuareg)
 ;; Merlin was installed with OPAM
-;; (require-package 'company) ;; this is likely covered by merlin
+(require-package 'company) ;; this is likely covered by merlin
 ;; TODO get automformat func, is it in ocp-indent?
 
 (setq tuareg-match-patterns-aligned t)
@@ -14,11 +14,12 @@
     (add-to-list 'load-path (expand-file-name "emacs/site-lisp" opam-share))
     (autoload 'merlin-mode "merlin" nil t nil)
     (add-hook 'tuareg-mode-hook 'merlin-mode t)
+    (with-eval-after-load 'company
+      (add-to-list 'company-backends 'merlin-company-backend))
+    (add-hook 'merlin-mode-hook 'merlin-mode-hook)
     (setq merlin-command "ocamlmerlin")))
 
 (add-hook 'tuareg-mode-hook 'smartparens-mode)
-
-(provide 'setup-ocaml)))
 
 
 (provide 'setup-ocaml)

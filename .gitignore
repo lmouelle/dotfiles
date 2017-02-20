@@ -4,3 +4,4 @@ emacs/.config/systemd/user/default.target.wants/
 .smex-items
 elpa
 ido.last
+emacs/.emacs.d/anaconda-mode/

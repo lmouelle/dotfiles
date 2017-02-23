@@ -1,8 +1,12 @@
+;;; to run this I need to install OPAM
+;;; then do the standard OPAM init
+;;; then "opam install merlin", optionally utop, ocamlbuild and ocp-indent
+;;; The merlin package in MELPA is a lie it seems...
+
 (require 'packaging)
 (require-package 'smartparens)
 ;; (require-package 'ocp-indent)
 (require-package 'tuareg)
-;; Merlin was installed with OPAM
 (require-package 'company) ;; this is likely covered by merlin
 ;; TODO get automformat func, is it in ocp-indent?
 
@@ -16,10 +20,9 @@
     (add-hook 'tuareg-mode-hook 'merlin-mode t)
     (with-eval-after-load 'company
       (add-to-list 'company-backends 'merlin-company-backend))
-    (add-hook 'merlin-mode-hook 'merlin-mode-hook)
-    (setq merlin-command "ocamlmerlin")))
+    (add-hook 'merlin-mode-hook 'company-mode)
+    (setq merlin-command 'opam)))
 
 (add-hook 'tuareg-mode-hook 'smartparens-mode)
-
 
 (provide 'setup-ocaml)

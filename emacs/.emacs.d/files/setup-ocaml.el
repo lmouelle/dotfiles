@@ -7,10 +7,8 @@
 
 (require 'packaging)
 (require-package 'smartparens)
-;; (require-package 'ocp-indent)
 (require-package 'tuareg)
-(require-package 'company) ;; this is likely covered by merlin
-;; TODO get automformat func, is it in ocp-indent?;;
+(require-package 'company) 
 (require-package 'utop) ;; TODO integrate utop more completely
 
 (setq tuareg-match-patterns-aligned t)
@@ -25,9 +23,12 @@
     (add-hook 'merlin-mode-hook 'company-mode)
     (setq merlin-command 'opam)))
 
+(setq utop-command "opam config exec -- utop -emacs")
+
 (add-hook 'merlin-mode-hook 'company-mode)
 (add-hook 'tuareg-mode-hook 'smartparens-mode)
 (add-hook 'tuareg-mode-hook 'merlin-mode t)
+(add-hook 'utop-mode-hook 'smartparens-mode)
 
 (with-eval-after-load 'company
   (add-to-list 'company-backends 'merlin-company-backend))

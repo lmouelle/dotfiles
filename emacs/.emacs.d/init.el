@@ -24,6 +24,7 @@
 (require 'setup-rust)
 (require 'setup-ruby)
 (require 'setup-ocaml)
+(require 'setup-prolog)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

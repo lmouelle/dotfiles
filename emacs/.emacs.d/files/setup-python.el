@@ -6,7 +6,6 @@
 (require-package 'smartparens)
 (require 'smartparens-config)
 (require-package 'flycheck)
-(require-package 'flycheck-pos-tip)
 (require-package 'yasnippet)
 (require-package 'live-py-mode)
 

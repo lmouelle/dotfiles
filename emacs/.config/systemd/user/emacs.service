@@ -6,9 +6,8 @@ Documentation=man:emacs(1) info:Emacs
 Type=forking
 ExecStart=/usr/bin/emacs --daemon
 ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
-Restart=on-failure
-Environment=DISPLAY=:%i
-TimeoutStartSec=0
+Restart=always
+Environment=SSH_AUTH_SOCK=%t/keyring/ssh
 
 [Install]
 WantedBy=default.target

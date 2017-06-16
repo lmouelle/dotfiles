@@ -23,8 +23,6 @@ PACKAGES=$(sort $(dir $(wildcard */)))
 install: 
 	stow -t ~ $(PACKAGES)
 	$(MAKE) emacs_install
-	opam init
-	opam install merlin ocamlbuild
 
 .PHONY: uninstall
 uninstall: 

@@ -5,10 +5,7 @@
 (require 'packaging)
 
 (require-package 'yasnippet)
-(require 'yasnippet)
-
 (require-package 'eldoc)
-(require 'eldoc)
 
 (yas-global-mode t)
 

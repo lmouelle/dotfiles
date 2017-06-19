@@ -33,6 +33,8 @@
 
 (setq create-lockfiles nil)
 
+(setq backup-directory-alist `(("." . "~/.emacs_backups"))) ;; Moves all the foo~ files to a special backup dir
+
 (provide 'editing)
 ;;;
 

@@ -4,7 +4,6 @@
 (require-package 'clang-format)
 (require-package 'company)
 (require-package 'smartparens)
-(require-package 'smartparens-config) ; sets defaults
 (require-package 'flycheck)
 
 (add-hook 'c-mode-hook #'smartparens-mode)

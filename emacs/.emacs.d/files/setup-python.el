@@ -4,9 +4,7 @@
 (require-package 'anaconda-mode)
 (require-package 'company-anaconda)
 (require-package 'smartparens)
-(require 'smartparens-config)
 (require-package 'flycheck)
-(require-package 'yasnippet)
 (require-package 'live-py-mode)
 
 (add-hook 'python-mode-hook #'smartparens-mode)

@@ -26,6 +26,7 @@
 (require 'setup-ruby)
 (require 'setup-ocaml)
 (require 'setup-prolog)
+(require 'setup-go)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -37,7 +38,7 @@
     ("fad38808e844f1423c68a1888db75adf6586390f5295a03823fa1f4959046f81" default)))
  '(package-selected-packages
    (quote
-    (magit company-auctex auctex utop merlin tuareg tuareg-mode ocp-indent darcula-theme chruby robe ruby-electric inf-ruby cargo toml-mode flycheck-rust racer cider-eval-sexp-fu cider yasnippet smex smartparens rainbow-delimiters python-mode popwin paredit live-py-mode ido-ubiquitous golden-ratio flycheck-pos-tip dracula-theme company-anaconda clang-format auto-compile))))
+    (smartparens-mode exec-path-from-shell go-guru go-eldoc company-go magit company-auctex auctex utop merlin tuareg tuareg-mode ocp-indent darcula-theme chruby robe ruby-electric inf-ruby cargo toml-mode flycheck-rust racer cider-eval-sexp-fu cider yasnippet smex smartparens rainbow-delimiters python-mode popwin paredit live-py-mode ido-ubiquitous golden-ratio flycheck-pos-tip dracula-theme company-anaconda clang-format auto-compile))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

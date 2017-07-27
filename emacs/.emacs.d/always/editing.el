@@ -4,6 +4,10 @@
 
 (require 'packaging)
 
+;; Please leave this at the top, things get string if you do not
+(setq custom-file "~/.emacs.d/.emacs_custom.el")
+(load custom-file 'noerror)
+
 (require-package 'yasnippet)
 (require-package 'eldoc)
 

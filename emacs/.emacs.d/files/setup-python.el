@@ -11,11 +11,16 @@
 (add-hook 'python-mode-hook #'anaconda-mode)
 (add-hook 'python-mode-hook #'anaconda-eldoc-mode)
 (add-hook 'python-mode-hook #'company-mode)
+(add-hook 'python-mode-hook #'flycheck-mode)
 
 (eval-after-load "company"
   '(add-to-list 'company-backends '(company-anaconda :with company-capf)))
 
-(when (executable-find "ipython3")
-  (setq python-shell-interpreter "ipython3"))
+(when (executable-find "ipython")
+  (setq python-shell-interpreter "ipython"))
+
+;; PHaul project specifically wants hard tabs instead of spaces
+(with-eval-after-load 'python
+  '(setq indent-tabs-mode t))
 
 (provide 'setup-python)

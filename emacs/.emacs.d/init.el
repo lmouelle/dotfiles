@@ -27,5 +27,6 @@
 (require 'setup-ocaml)
 (require 'setup-prolog)
 (require 'setup-go)
+(require 'setup-swift)
 
 (provide 'init)

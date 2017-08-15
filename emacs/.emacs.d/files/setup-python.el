@@ -19,8 +19,4 @@
 (when (executable-find "ipython")
   (setq python-shell-interpreter "ipython"))
 
-;; PHaul project specifically wants hard tabs instead of spaces
-(with-eval-after-load 'setup-python
-  '(setq indent-tabs-mode t))
-
 (provide 'setup-python)

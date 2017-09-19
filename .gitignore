@@ -5,4 +5,4 @@ emacs/.config/systemd/user/default.target.wants/
 elpa
 ido.last
 emacs/.emacs.d/anaconda-mode/
-/home/lu/Code/dotfiles/emacs/.emacs.d/.emacs_custom.el
+emacs/.emacs.d/.emacs_custom.el

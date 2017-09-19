@@ -17,3 +17,4 @@ set -gx PATH $PATH $GOPATH/bin
 
 # OPAM configuration
 source /home/lu/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+set -gx VAGRANT_DEFAULT_PROVIDER virtualbox

@@ -28,5 +28,6 @@
 (require 'setup-prolog)
 (require 'setup-go)
 (require 'setup-swift)
+(require 'setup-latex)
 
 (provide 'init)

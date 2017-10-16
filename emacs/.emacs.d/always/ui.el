@@ -19,7 +19,7 @@
 
 (setq column-number-mode t)
 
-(global-linum-mode t)
+(add-hook 'prog-mode-hook #'linum-on)
 
 (load-theme 'darcula t)
 

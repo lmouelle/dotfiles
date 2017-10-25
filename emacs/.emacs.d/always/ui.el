@@ -19,8 +19,10 @@
 
 (setq column-number-mode t)
 
-(add-hook 'prog-mode-hook #'linum-on)
+(add-hook 'prog-mode-hook #'linum-mode)
 
 (load-theme 'darcula t)
+
+(global-set-key (kbd "C-z") nil)
 
 (provide 'ui)

@@ -20,20 +20,17 @@
 (require-package 'company)
 (require-package 'auctex)
 (require-package 'company-auctex)
-(require-package 'reftex)
 
 (add-hook 'TeX-mode-hook #'smartparens-mode)
 (add-hook 'TeX-mode-hook #'flycheck-mode)
 (add-hook 'TeX-mode-hook #'company-mode)
-(add-hook 'TeX-mode-hook #'turn-on-reftex)
 (add-hook 'doc-view-minor-mode-hook #'auto-revert-mode)
 
 (add-hook 'TeX-mode-hook (lambda ()
-			   (progn
-			     ;; (setq TeX-PDF-mode t) ; PDF instead of DVI
-			     (setq TeX-auto-save t)
-			     (company-auctex-init))))
-
-
+			     (progn
+			       (setq TeX-PDF-mode t) ; PDF instead of DVI
+			       (setq TeX-parse-self t)
+			       (setq TeX-auto-save t)
+			       (company-auctex-init))))
 
 (provide 'setup-latex)

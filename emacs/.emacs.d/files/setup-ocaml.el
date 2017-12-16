@@ -5,6 +5,14 @@
 ;;; TODO this is kinda hacky and relies on some cp'd stuff. Clean it up
 
 
+;; https://github.com/diml/utop
+;; Look at the utop table there, cheat sheet here
+;; C-c C-s	utop	Start a utop buffer
+;; C-x C-e	utop-eval-phrase	Evaluate the current phrase
+;; C-x C-r	utop-eval-region	Evaluate the selectoed region
+;; C-c C-b	utop-eval-buffer	Evaluate the current buffer
+;; C-c C-k	utop-kill	Kill a running utop process
+
 (require 'packaging)
 (require-package 'smartparens)
 (require-package 'tuareg)
@@ -20,6 +28,7 @@
     (add-hook 'tuareg-mode-hook 'merlin-mode t)
     (with-eval-after-load 'company
       (add-to-list 'company-backends 'merlin-company-backend))
+    (add-hook 'tuareg-mode-hook #'utop-minor-mode)
     (add-hook 'merlin-mode-hook 'company-mode)
     (setq merlin-command 'opam)))
 

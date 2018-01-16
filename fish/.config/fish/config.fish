@@ -9,12 +9,6 @@ alias emct "emacsclient -t"
 # ~/.config/systemd/user/emacs.service, this merely calls it
 set -gx EDITOR "emacsclient -t"
 
-# Setting GOPATH manually, don't like default of $HOME/go
-# Might be a bad idea but I'll also add it to path, so if I do 'go get ...gocode'
-# it's easily accessible by emacs and other programs that can resolve from shell
-set -gx GOPATH $HOME/Code/golang
-set -gx PATH $PATH $GOPATH/bin
-
 # OPAM configuration
 source /home/lu/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
-set -gx VAGRANT_DEFAULT_PROVIDER virtualbox
+

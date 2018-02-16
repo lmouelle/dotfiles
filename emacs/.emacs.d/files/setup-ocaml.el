@@ -18,6 +18,7 @@
 (require-package 'tuareg)
 (require-package 'company) 
 (require-package 'utop) ;; TODO integrate utop more completely
+(require-package 'ocp-indent)
 
 (setq tuareg-match-patterns-aligned t)
 
@@ -31,6 +32,9 @@
     (add-hook 'tuareg-mode-hook #'utop-minor-mode)
     (add-hook 'merlin-mode-hook 'company-mode)
     (setq merlin-command 'opam)))
+
+(let ((opam-bin (ignore-errors (car (process-lines "opam" "config" "var" "bin")))))
+  (setq ocp-indent-path (expand-file-name "ocp-indent" opam-bin)))
 
 (setq utop-command "opam config exec -- utop -emacs")
 

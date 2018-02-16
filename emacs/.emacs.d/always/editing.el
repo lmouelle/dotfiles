@@ -3,8 +3,10 @@
 ;; Code
 
 (require 'packaging)
+(require-package 'yasnippet-snippets)
 
-;; Please leave this at the top, things get string if you do not
+
+;; Please leave this at the top, things get strange if you do not
 (setq custom-file "~/.emacs.d/.emacs_custom.el")
 (load custom-file 'noerror)
 

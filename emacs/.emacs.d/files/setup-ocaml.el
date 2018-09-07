@@ -26,11 +26,6 @@
   (when (and opam-share (file-directory-p opam-share))
     (add-to-list 'load-path (expand-file-name "emacs/site-lisp" opam-share))
     (autoload 'merlin-mode "merlin" nil t nil)
-    (add-hook 'tuareg-mode-hook 'merlin-mode t)
-    (with-eval-after-load 'company
-      (add-to-list 'company-backends 'merlin-company-backend))
-    (add-hook 'tuareg-mode-hook #'utop-minor-mode)
-    (add-hook 'merlin-mode-hook 'company-mode)
     (setq merlin-command 'opam)))
 
 (let ((opam-bin (ignore-errors (car (process-lines "opam" "config" "var" "bin")))))
@@ -41,7 +36,7 @@
 (add-hook 'merlin-mode-hook 'company-mode)
 (add-hook 'tuareg-mode-hook 'smartparens-mode)
 (add-hook 'tuareg-mode-hook 'merlin-mode t)
-(add-hook 'utop-mode-hook 'smartparens-mode)
+(add-hook 'tuareg-mode-hook 'utop-minor-mode)
 
 (with-eval-after-load 'company
   (add-to-list 'company-backends 'merlin-company-backend))

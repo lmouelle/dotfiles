@@ -1,6 +1,6 @@
 (require 'packaging)
 (require 'ido)
-(require-package 'ido-ubiquitous)
+(require-package 'ido-completing-read+)
 (require-package 'smex)
 
 (ido-mode 1)

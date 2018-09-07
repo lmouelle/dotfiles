@@ -11,3 +11,6 @@ set -gx EDITOR "emacsclient -t"
 
 # opam configuration
 source /home/$USER/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+
+# Add snap to path
+set -gx PATH $PATH /snap/bin

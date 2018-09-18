@@ -10,5 +10,5 @@ alias emct "emacsclient -t"
 set -gx EDITOR "emacsclient -t"
 
 # OPAM configuration
-source /home/lu/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+source /home/$USER/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 

@@ -6,5 +6,5 @@ let root =
     in Sys.chdir root;;
 
 #use "topfind";;
-#use "oUnit";;
-#use "yojson";;
+#require "oUnit";;
+#require "yojson";;

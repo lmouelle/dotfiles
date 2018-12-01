@@ -38,6 +38,8 @@
 
 (setq backup-directory-alist `(("." . "~/.emacs_backups"))) ;; Moves all the foo~ files to a special backup dir
 
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (provide 'editing)
 ;;;
 

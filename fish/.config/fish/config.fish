@@ -9,7 +9,7 @@ alias emct "emacsclient -t"
 # ~/.config/systemd/user/emacs.service, this merely calls it
 set -gx EDITOR "emacsclient -t"
 
-# opam configuration
+# OPAM configuration
 source /home/$USER/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 
 # Add snap to path

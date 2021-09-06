@@ -1,0 +1,6 @@
+[user]
+	name = Lucas Ouellette-Falkenstein
+	username = lmouelle
+	email = lmouelle@users.noreply.github.com
+[credential]
+	helper = cache

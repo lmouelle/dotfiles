@@ -5,10 +5,12 @@
 .DEFAULT_GOAL:=install
 
 CONFIGS=$(sort $(dir $(wildcard */)))
-PACKAGES=opam stow fish
+PACKAGES=opam stow fish patch
+# For some reason patch is not being picked up as a dependency when opam is installed
+OPAMPACKAGES=merlin ocp-ident
 
 .PHONY: install
-install: packages
+install: packages opampackages
 	stow -t ~ $(CONFIGS)
 	$(MAKE) emacs_install
 
@@ -41,3 +43,8 @@ update:
 .PHONY: packages
 packages:
 	sudo pacman -Syu $(PACKAGES) --needed
+
+.PHONY: opampackages
+opampackages:
+	opam init --disable-shell-hook
+	opam install merlin ocp-indent utop

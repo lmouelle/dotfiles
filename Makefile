@@ -39,7 +39,7 @@ uninstall:
 .PHONY: emacs_install
 emacs_install:
 	systemctl --user enable emacs
-	systemctl --user start emacs
+	systemctl --user condstart emacs
 
 .PHONY: emacs_uninstall
 emacs_uninstall:

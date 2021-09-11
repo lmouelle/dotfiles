@@ -16,19 +16,21 @@
 (require 'packaging)
 (require-package 'smartparens)
 (require-package 'tuareg)
-(require-package 'company) 
+(require-package 'company)
 (require-package 'utop) ;; TODO integrate utop more completely
 (require-package 'ocp-indent)
+(require-package 'merlin-company)
+(require-package 'merlin)
 
 (setq tuareg-match-patterns-aligned t)
 
-(let ((opam-share (ignore-errors (car (process-lines "opam" "config" "var" "share")))))
+(let ((opam-share (ignore-errors (car (process-lines "opam" "var" "share")))))
   (when (and opam-share (file-directory-p opam-share))
     (add-to-list 'load-path (expand-file-name "emacs/site-lisp" opam-share))
     (autoload 'merlin-mode "merlin" nil t nil)
     (setq merlin-command 'opam)))
 
-(let ((opam-bin (ignore-errors (car (process-lines "opam" "config" "var" "bin")))))
+(let ((opam-bin (ignore-errors (car (process-lines "opam" "var" "bin")))))
   (setq ocp-indent-path (expand-file-name "ocp-indent" opam-bin)))
 
 (setq utop-command "opam config exec -- utop -emacs")

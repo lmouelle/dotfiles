@@ -1,3 +1,9 @@
+!! Behavior
+
+! Extensions active
+!URxvt.perl-ext-common: clipboard
+!URxvt.url-select.launcher: brave
+
 ! do not scroll following the output
 URxvt*scrollTtyOutput: false
 
@@ -14,4 +20,17 @@ URxvt.boldfont: xft:DejaVuSansMono
 URxvt.letterSpace: -6
 
 ! Never dump terminal contents on prntscreen key press
-URxct.print-pipe: "cat > /dev/null"
+URxvt.print-pipe: "cat > /dev/null"
+
+! Paging up. Default is Shft-PgUp, this would change it
+! to ctrl-u. Evaluate changing it after a while of trying defaults
+! URxvt.keysym.Ctrl-u: eval:scroll_up_pages(1)
+
+! Jump previous/next word
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.Control-Left: \033[1;5D
+
+! Trying to get hightlight and copy paste working
+!URxvt.iso14755 : false  ! this is required for this to work
+!URxvt.keysym.Control-Shift-C:   perl:clipboard:copy
+!URxvt.keysym.Control-Shift-V:   perl:clipboard:paste

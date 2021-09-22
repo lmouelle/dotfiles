@@ -1,8 +1,7 @@
 !! Behavior
 
 ! Extensions active
-!URxvt.perl-ext-common: clipboard
-!URxvt.url-select.launcher: brave
+URxvt.perl-ext-common: clipboard
 
 ! do not scroll following the output
 URxvt*scrollTtyOutput: false
@@ -30,7 +29,10 @@ URxvt.print-pipe: "cat > /dev/null"
 URxvt.keysym.Control-Right: \033[1;5C
 URxvt.keysym.Control-Left: \033[1;5D
 
+! Drives me bananas
+URxvt.iso14755 : false
+
 ! Trying to get hightlight and copy paste working
-!URxvt.iso14755 : false  ! this is required for this to work
+
 !URxvt.keysym.Control-Shift-C:   perl:clipboard:copy
 !URxvt.keysym.Control-Shift-V:   perl:clipboard:paste

@@ -7,7 +7,7 @@
 CONFIGS=$(sort $(dir $(wildcard */)))
 # Packages are software that we have configurations for in this dotfiles
 # repository
-PACKAGES=opam stow fish patch
+PACKAGES=opam stow fish patch urxvt urxvt-perls
 # For some reason patch is not being picked up as a dependency when opam is installed,
 # notified arch package maintainer but it can take time for that pickup.
 # For now explicitly marking patch as required

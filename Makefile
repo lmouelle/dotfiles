@@ -59,7 +59,7 @@ update:
 
 .PHONY: packages
 packages:
-	sudo pacman -Syu $(PACKAGES) --needed
+	sudo pacman -Sy $(PACKAGES) --needed
 
 .PHONY: opampackages
 opampackages: packages

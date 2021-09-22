@@ -1,0 +1,17 @@
+! do not scroll following the output
+URxvt*scrollTtyOutput: false
+
+! scroll with mouse
+URxvt*scrollWithBuffer: true
+
+! jump to bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+URxvt.font: xft:DejaVuSans
+URxvt.boldfont: xft:DejaVuSansMono
+
+! Narrow the letters together a little
+URxvt.letterSpace: -6
+
+! Never dump terminal contents on prntscreen key press
+URxct.print-pipe: "cat > /dev/null"

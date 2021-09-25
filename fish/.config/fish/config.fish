@@ -14,4 +14,4 @@ set fish_greeting
 
 # Start ssh agent so we can list/manage keys, and output csh-style
 # syntax for setting env variables that are friendly to fish
-eval (ssh-agent -c)
+# eval (ssh-agent -c) > /dev/null

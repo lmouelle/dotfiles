@@ -51,12 +51,6 @@ reinstall:
 	$(MAKE) uninstall
 	$(MAKE) install
 
-.PHONY: update
-update:
-	git pull
-	$(MAKE) uninstall
-	$(MAKE) install
-
 .PHONY: packages
 packages:
 	sudo pacman -Sy $(PACKAGES) --needed
